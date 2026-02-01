@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="metier" version="4">
+  <OBJECT>
+    <ID name="metier" mc="Standard.Package" uid="597117ea-67a3-4254-b417-62eb14c994f7"/>
+    <PID name="projet" mc="Standard.Package" uid="26153034-6b76-4895-a610-dda33ef35183"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[metier]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Bloc" mc="Standard.Class" uid="e2ce5985-4692-40bb-a9b7-4574aa16f784"/>
+        <COMPID name="BlocElementaire" mc="Standard.Class" uid="26c6138e-e2aa-48ee-bbae-4c0ec6da1fa6"/>
+        <COMPID name="AbstractCase" mc="Standard.Class" uid="6b6319d2-0218-4f53-9a47-2a4dc10c6ede"/>
+        <COMPID name="Case" mc="Standard.Class" uid="8facd58a-a59d-4764-952d-4548a4e7bce0"/>
+        <COMPID name="Mur" mc="Standard.Class" uid="f71f57e0-a450-4cd2-8178-6ba2e57e6bb2"/>
+        <COMPID name="Sortie" mc="Standard.Class" uid="7559d099-8fda-4052-b474-2ed1293484be"/>
+        <OBJECT>
+          <ID name="Direction" mc="Standard.Enumeration" uid="4f377bf7-7f9c-4d15-899c-724edaf50b06"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">true</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[Direction]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="HAUT" mc="Standard.EnumerationLiteral" uid="b708f8a9-9057-426f-a1b3-06225103efd7"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[HAUT]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="BAS" mc="Standard.EnumerationLiteral" uid="4011d2fc-ecfb-482e-8d79-4a69a7762493"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[BAS]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="GAUCHE" mc="Standard.EnumerationLiteral" uid="920f6925-122e-461e-9c9a-f6eb7f7daf6b"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[GAUCHE]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="DROITE" mc="Standard.EnumerationLiteral" uid="d2de49ee-6db1-450a-ba77-47555635e6bc"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[DROITE]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <ID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="f13ab7cb-0541-480a-b8f1-17324dd8f928"/>
+              <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <COMPID name="Position" mc="Standard.Class" uid="90b3cad6-5b8c-4db4-a438-59a62e558d72"/>
+        <COMPID name="Plateau" mc="Standard.Class" uid="f18c9e36-a759-4b55-ae2e-9cf5bfc42646"/>
+        <COMPID name="Main" mc="Standard.Class" uid="07433810-3969-4acd-914b-775021821f1c"/>
+      </COMP>
+      <LINK relation="Extension">
+        <ID name="JavaPackage" mc="Infrastructure.Stereotype" uid="74392891-bd80-443b-b6a5-dc7820033241"/>
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Tag">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="3f83dee8-84c9-4676-877a-6d134e5fe04e"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Definition">
+              <REFOBJ>
+                <ID name="JavaImport" mc="Infrastructure.TagType" uid="0e3f7bfd-8cca-4381-af33-676a50b522de"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="metier Class diagram" mc="Standard.ClassDiagram" uid="7f422ad6-18c7-4d2e-b40f-0781c12912bf"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

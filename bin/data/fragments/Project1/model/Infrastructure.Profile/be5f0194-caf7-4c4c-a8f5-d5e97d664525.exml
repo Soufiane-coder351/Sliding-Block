@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="JavaExtensions" version="4">
+  <OBJECT>
+    <ID name="JavaExtensions" mc="Infrastructure.Profile" uid="be5f0194-caf7-4c4c-a8f5-d5e97d664525"/>
+    <PID name="LocalModule" mc="Infrastructure.ModuleComponent" uid="e0589a4b-c16e-4ef0-905c-9e00bb8c8719"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[JavaExtensions]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="DefinedStereotype">
+        <COMPID name="JavaPackage" mc="Infrastructure.Stereotype" uid="74392891-bd80-443b-b6a5-dc7820033241"/>
+        <COMPID name="JavaClass" mc="Infrastructure.Stereotype" uid="c1baa40d-d816-4781-bf1f-48614f6295e6"/>
+        <COMPID name="JavaGetter_Infrastructure.Dependency" mc="Infrastructure.Stereotype" uid="8fd8df46-d25c-4a3d-93bd-c577b5a34e6b"/>
+        <COMPID name="JavaGetter_Standard.Operation" mc="Infrastructure.Stereotype" uid="4739246e-6597-42e0-a00d-490b246a0f4d"/>
+        <COMPID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="f13ab7cb-0541-480a-b8f1-17324dd8f928"/>
+        <COMPID name="JarFile" mc="Infrastructure.Stereotype" uid="7e3fcc04-a98b-4134-85fc-2a9121a1a79c"/>
+        <COMPID name="JavaAnnotation" mc="Infrastructure.Stereotype" uid="0f090254-37b3-4f4b-af7b-2958d0d352eb"/>
+        <COMPID name="JavaAssociationEndProperty" mc="Infrastructure.Stereotype" uid="e8be14d5-22fa-4714-872d-97a95be69398"/>
+        <COMPID name="JavaAttributeProperty" mc="Infrastructure.Stereotype" uid="ad81764f-31f7-460d-934b-975da9a2b5c2"/>
+        <COMPID name="JavaComponent" mc="Infrastructure.Stereotype" uid="ec44d895-71ab-438b-981c-1f846452680a"/>
+        <COMPID name="JavaDataType" mc="Infrastructure.Stereotype" uid="a3e64947-d27c-4e87-bedd-47047ac02ff4"/>
+        <COMPID name="JavaDocInvariant" mc="Infrastructure.Stereotype" uid="44bc62db-4f33-40f8-86f4-e0dbbdbe37d3"/>
+        <COMPID name="JavaFileGroup" mc="Infrastructure.Stereotype" uid="57cbb172-78ce-4c70-9847-a029c5af0e4d"/>
+        <COMPID name="JavaInterface" mc="Infrastructure.Stereotype" uid="bbabd0d6-87cc-4bf4-8ddf-7c902b4c08b2"/>
+        <COMPID name="JavaInvariant" mc="Infrastructure.Stereotype" uid="f5c699f4-9cfb-4433-8294-9e367c6605c2"/>
+        <COMPID name="JavaPostCondition" mc="Infrastructure.Stereotype" uid="03cb73b3-7e78-48c0-97aa-69c4c4bdffd1"/>
+        <COMPID name="JavaPreCondition" mc="Infrastructure.Stereotype" uid="763b0e4d-9c84-4db7-be06-33d2ad3a0abc"/>
+        <COMPID name="JavaResource" mc="Infrastructure.Stereotype" uid="2126ddbc-fbf8-46f3-9d07-12820d6cc701"/>
+        <COMPID name="JavaSetter_Infrastructure.Dependency" mc="Infrastructure.Stereotype" uid="478ad29f-c247-464b-9b47-0bb28c1d48eb"/>
+        <COMPID name="JavaSetter_Standard.Operation" mc="Infrastructure.Stereotype" uid="9a3f9fb5-1dff-45c5-9bb1-3220c9741b22"/>
+        <COMPID name="JavaStatic" mc="Infrastructure.Stereotype" uid="44ba78d6-3f17-4772-91ef-5f3d3110569f"/>
+        <COMPID name="SeeJavadoc" mc="Infrastructure.Stereotype" uid="fd832651-620c-4ed3-86cf-279127f10bac"/>
+        <COMPID name="StandardMethod" mc="Infrastructure.Stereotype" uid="7e34655c-5f74-4886-b82f-573dcf28f224"/>
+        <COMPID name="AbstractJavaAnnotation" mc="Infrastructure.Stereotype" uid="92089eb4-b7a2-47a8-9b99-edc5a3113157"/>
+      </COMP>
+      <COMP relation="OwnedReference">
+        <COMPID name="" mc="Infrastructure.MetaclassReference" uid="61f1c35c-c28f-42db-9b53-1dd25eb13c74"/>
+        <COMPID name="" mc="Infrastructure.MetaclassReference" uid="a8d7b5b2-82ae-4d52-bf58-070483e90887"/>
+        <COMPID name="" mc="Infrastructure.MetaclassReference" uid="00c6beb4-3073-4c04-8a88-a70c1620076d"/>
+        <COMPID name="" mc="Infrastructure.MetaclassReference" uid="1c298d50-042e-41cf-8867-77508e2d82cd"/>
+        <COMPID name="" mc="Infrastructure.MetaclassReference" uid="56fb3fcf-18b5-447d-ad5d-6491178a5522"/>
+        <COMPID name="" mc="Infrastructure.MetaclassReference" uid="4eb2cb5c-453a-402f-a9d3-52ca0643f326"/>
+        <COMPID name="" mc="Infrastructure.MetaclassReference" uid="d3f375fb-30db-4ee2-878c-6e43c0805193"/>
+        <COMPID name="" mc="Infrastructure.MetaclassReference" uid="b3411a92-9c11-47d0-af16-9ecdbef87f49"/>
+        <COMPID name="" mc="Infrastructure.MetaclassReference" uid="7b7f1dac-c06a-4c83-8319-5f7c5265a1b5"/>
+        <COMPID name="" mc="Infrastructure.MetaclassReference" uid="4b7fe26d-1bec-4ba0-a71c-b2de5b94f960"/>
+        <COMPID name="" mc="Infrastructure.MetaclassReference" uid="9a904716-1597-498b-bc72-bb88abfd9d97"/>
+        <COMPID name="" mc="Infrastructure.MetaclassReference" uid="77a40475-18b3-4aa6-9dd4-0bf6e95d6f7b"/>
+        <COMPID name="" mc="Infrastructure.MetaclassReference" uid="f05c153e-9ef2-43f1-b14a-8bb850d18b8b"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

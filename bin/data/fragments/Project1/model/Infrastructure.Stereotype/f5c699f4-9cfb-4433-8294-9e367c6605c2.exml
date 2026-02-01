@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="JavaInvariant" version="4">
+  <OBJECT>
+    <ID name="JavaInvariant" mc="Infrastructure.Stereotype" uid="f5c699f4-9cfb-4433-8294-9e367c6605c2"/>
+    <PID name="JavaExtensions" mc="Infrastructure.Profile" uid="be5f0194-caf7-4c4c-a8f5-d5e97d664525"/>
+    <ATTRIBUTES>
+      <ATT name="Image"></ATT>
+      <ATT name="Icon"></ATT>
+      <ATT name="IsHidden">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="LabelKey"><![CDATA[JavaInvariant]]></ATT>
+      <ATT name="BaseClassName"><![CDATA[Standard.Constraint]]></ATT>
+      <ATT name="Name"><![CDATA[JavaInvariant]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="projet" version="4">
+  <OBJECT>
+    <ID name="projet" mc="Standard.Package" uid="26153034-6b76-4895-a610-dda33ef35183"/>
+    <PID name="gloo" mc="Standard.Package" uid="82240828-feac-467e-b692-ffbfcaf1da5b"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[projet]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="metier" mc="Standard.Package" uid="597117ea-67a3-4254-b417-62eb14c994f7"/>
+        <COMPID name="controle" mc="Standard.Package" uid="2fcb3df4-b05e-41f1-ad4a-87f21ad5d197"/>
+      </COMP>
+      <LINK relation="Extension">
+        <ID name="JavaPackage" mc="Infrastructure.Stereotype" uid="74392891-bd80-443b-b6a5-dc7820033241"/>
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Tag">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="ba9cfc37-a98f-4ac6-bbde-9ca0e00a4e62"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Definition">
+              <REFOBJ>
+                <ID name="JavaImport" mc="Infrastructure.TagType" uid="0e3f7bfd-8cca-4381-af33-676a50b522de"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

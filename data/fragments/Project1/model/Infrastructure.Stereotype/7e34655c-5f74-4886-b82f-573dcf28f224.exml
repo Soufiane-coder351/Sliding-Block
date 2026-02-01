@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="StandardMethod" version="4">
+  <OBJECT>
+    <ID name="StandardMethod" mc="Infrastructure.Stereotype" uid="7e34655c-5f74-4886-b82f-573dcf28f224"/>
+    <PID name="JavaExtensions" mc="Infrastructure.Profile" uid="be5f0194-caf7-4c4c-a8f5-d5e97d664525"/>
+    <ATTRIBUTES>
+      <ATT name="Image"></ATT>
+      <ATT name="Icon"><![CDATA[/config/.modelio/5.4/opensource-cache/conf/org.eclipse.osgi/303/data/modules_cache/JavaDesigner_5.4.02/0/JavaDesigner/res/bmp/auto.png]]></ATT>
+      <ATT name="IsHidden">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="LabelKey"><![CDATA[StandardMethod]]></ATT>
+      <ATT name="BaseClassName"><![CDATA[Standard.Operation]]></ATT>
+      <ATT name="Name"><![CDATA[StandardMethod]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

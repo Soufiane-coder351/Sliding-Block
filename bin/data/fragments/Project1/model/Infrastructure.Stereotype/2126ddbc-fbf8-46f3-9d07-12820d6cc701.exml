@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="JavaResource" version="4">
+  <OBJECT>
+    <ID name="JavaResource" mc="Infrastructure.Stereotype" uid="2126ddbc-fbf8-46f3-9d07-12820d6cc701"/>
+    <PID name="JavaExtensions" mc="Infrastructure.Profile" uid="be5f0194-caf7-4c4c-a8f5-d5e97d664525"/>
+    <ATTRIBUTES>
+      <ATT name="Image"><![CDATA[/config/.modelio/5.4/opensource-cache/conf/org.eclipse.osgi/303/data/modules_cache/JavaDesigner_5.4.02/0/JavaDesigner/res/bmp/file.png]]></ATT>
+      <ATT name="Icon"><![CDATA[/config/.modelio/5.4/opensource-cache/conf/org.eclipse.osgi/303/data/modules_cache/JavaDesigner_5.4.02/0/JavaDesigner/res/bmp/file.png]]></ATT>
+      <ATT name="IsHidden">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="LabelKey"><![CDATA[JavaResource]]></ATT>
+      <ATT name="BaseClassName"><![CDATA[Standard.Artifact]]></ATT>
+      <ATT name="Name"><![CDATA[JavaResource]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

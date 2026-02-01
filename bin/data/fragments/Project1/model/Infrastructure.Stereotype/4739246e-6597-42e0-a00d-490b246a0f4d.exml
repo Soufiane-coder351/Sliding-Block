@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="JavaGetter_Standard.Operation" version="4">
+  <OBJECT>
+    <ID name="JavaGetter_Standard.Operation" mc="Infrastructure.Stereotype" uid="4739246e-6597-42e0-a00d-490b246a0f4d"/>
+    <PID name="JavaExtensions" mc="Infrastructure.Profile" uid="be5f0194-caf7-4c4c-a8f5-d5e97d664525"/>
+    <ATTRIBUTES>
+      <ATT name="Image"><![CDATA[/config/.modelio/5.4/opensource-cache/conf/org.eclipse.osgi/303/data/modules_cache/JavaDesigner_5.4.02/0/JavaDesigner/res/bmp/auto.png]]></ATT>
+      <ATT name="Icon"></ATT>
+      <ATT name="IsHidden">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="LabelKey"><![CDATA[JavaGetter]]></ATT>
+      <ATT name="BaseClassName"><![CDATA[Standard.Operation]]></ATT>
+      <ATT name="Name"><![CDATA[JavaGetter_Standard.Operation]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>
