@@ -1,5 +1,7 @@
 package gloo.projet.controle;
 
+import javax.swing.JOptionPane;
+
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import gloo.projet.metier.Bloc;
 import gloo.projet.metier.Direction;
@@ -15,6 +17,21 @@ public class Controleur {
 
     public Controleur(Plateau plateau) {
         this.plateau = plateau;
+    }
+    
+    public Bloc getBlocSelectionne() {
+        return this.blocSelectionne;
+    }
+    
+    public void selection(final int ligne, final int colonne) {
+        // On demande au plateau le bloc présent à ces coordonnées
+        this.blocSelectionne = this.plateau.getBloc(ligne, colonne);
+        
+        if (this.blocSelectionne != null) {
+            System.out.println("Bloc " + blocSelectionne.getNumero() + " sélectionné via IHM !");
+        } else {
+            System.out.println("Case vide ou mur sélectionné.");
+        }
     }
     
     @objid ("f204014b-9182-42ca-866f-357136e4753e")
@@ -39,6 +56,26 @@ public class Controleur {
                 System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 System.out.println("!!! BRAVO ! VOUS AVEZ GAGNÉ !!!");
                 System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
+                String[] options = {"Recommencer", "Quitter"};
+                int choix = JOptionPane.showOptionDialog(
+                        null, 
+                        "Félicitations ! Vous avez gagné !", 
+                        "Victoire !", 
+                        JOptionPane.DEFAULT_OPTION, 
+                        JOptionPane.INFORMATION_MESSAGE, 
+                        null, 
+                        options, 
+                        options[0]
+                    );
+                if (choix == 0) { // L'utilisateur a cliqué sur "Recommencer"
+                    this.plateau.initialiserBlocs(); // On réinitialise le modèle
+                    this.blocSelectionne = null;     // On désélectionne le bloc
+                    return true;
+                } else { // L'utilisateur a cliqué sur "Quitter" ou a fermé la fenêtre
+                    System.exit(0); // Ferme l'application
+                }
+                
                 return true; // On signale la victoire
             }
         } else {

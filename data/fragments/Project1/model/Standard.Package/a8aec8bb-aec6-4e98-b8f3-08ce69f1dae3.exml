@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="ihm" version="4">
+  <OBJECT>
+    <ID name="ihm" mc="Standard.Package" uid="a8aec8bb-aec6-4e98-b8f3-08ce69f1dae3"/>
+    <PID name="projet" mc="Standard.Package" uid="26153034-6b76-4895-a610-dda33ef35183"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[ihm]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="FenetreJeu" mc="Standard.Class" uid="69a3e27f-b4a7-4915-8d1b-0fa30a660dd4"/>
+        <COMPID name="GrilleGraphique" mc="Standard.Class" uid="526b11e6-cc53-4d70-8d52-9d98be162dea"/>
+        <COMPID name="CaseGraphique" mc="Standard.Class" uid="b5f2b763-6f3e-4cc6-b009-724a2f538b1f"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

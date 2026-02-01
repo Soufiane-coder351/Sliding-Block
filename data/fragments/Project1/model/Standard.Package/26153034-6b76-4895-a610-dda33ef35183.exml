@@ -16,6 +16,7 @@
       <COMP relation="OwnedElement">
         <COMPID name="metier" mc="Standard.Package" uid="597117ea-67a3-4254-b417-62eb14c994f7"/>
         <COMPID name="controle" mc="Standard.Package" uid="2fcb3df4-b05e-41f1-ad4a-87f21ad5d197"/>
+        <COMPID name="ihm" mc="Standard.Package" uid="a8aec8bb-aec6-4e98-b8f3-08ce69f1dae3"/>
       </COMP>
       <LINK relation="Extension">
         <ID name="JavaPackage" mc="Infrastructure.Stereotype" uid="74392891-bd80-443b-b6a5-dc7820033241"/>

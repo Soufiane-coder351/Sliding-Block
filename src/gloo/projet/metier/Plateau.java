@@ -1,6 +1,7 @@
 package gloo.projet.metier;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
@@ -23,7 +24,7 @@ public class Plateau {
         this.nbLignes = lignes;
         this.nbColonnes = colonnes;
         // On peut même appeler la création ici pour gagner du temps
-        this.creerPlateauDeBase();
+//        this.creerPlateauDeBase();
     }
     
     @objid ("ab90ffef-dc88-4d0b-9251-a84aedc63d50")
@@ -63,11 +64,19 @@ public class Plateau {
     }
 
     @objid ("e3020a7f-30cc-4f60-96d5-337ad6c14101")
-    public void creerPlateauDeBase() {
+ // Dans Plateau.java
+    public void creerPlateauDeBase(List<Position> positionsSortie) {
         for (int l = 0; l < nbLignes; l++) {
             for (int c = 0; c < nbColonnes; c++) {
                 Position p = new Position(l, c);
-                if (l == nbLignes / 2 && c == nbColonnes - 1) {
+                
+                // On vérifie si cette position est dans la liste de la sortie
+                boolean estSortie = false;
+                for(Position ps : positionsSortie) {
+                    if(ps.getLigne() == l && ps.getColonne() == c) estSortie = true;
+                }
+
+                if (estSortie) {
                     kases.put(p, new Sortie(p, this));
                 } 
                 else if (l == 0 || l == nbLignes - 1 || c == 0 || c == nbColonnes - 1) {
@@ -123,16 +132,41 @@ public class Plateau {
         this.blocs.put(numero, nouveauBloc);
     }
 
+    public void viderPlateau() {
+        this.blocs.clear(); 
+
+        for (int l = 0; l < nbLignes; l++) {
+            for (int c = 0; c < nbColonnes; c++) {
+                AbstractCase ac = this.getCase(new Position(l, c));
+                if (ac != null) {
+                    ac.setOccupant(null); // On déconnecte l'ancien bloc de la case
+                }
+            }
+        }
+    }
+    
     @objid ("73a6cc5c-2b67-43cb-b3f9-065aa783bd6b")
     public void initialiserBlocs() {
-        // Bloc 0 (le rouge) en vertical
-        ajouterBlocAuPlateau(0, new int[][]{ {1,2}, {1,3} });
+        this.viderPlateau();
         
-        // Bloc 1 (un petit carré)
-        ajouterBlocAuPlateau(1, new int[][]{ {3,1} });
+        // Bloc 0 (Le gros bloc Jaune/Rouge - 2x2)
+        ajouterBlocAuPlateau(0, new int[][]{ {1,1}, {1,2},});
         
-        // Bloc 2 (un bloc horizontal)
-        ajouterBlocAuPlateau(2, new int[][]{ {2,4}, {1,4} });
+        // Blocs Verticaux (1x2)
+        ajouterBlocAuPlateau(1, new int[][]{ {1,3} }); // Haut droite
+        ajouterBlocAuPlateau(2, new int[][]{ {2,1} }); // Bas gauche
+        ajouterBlocAuPlateau(3, new int[][]{ {2,2} }); // Bas droite
+        
+        ajouterBlocAuPlateau(4, new int[][]{ {3,1}, {4,1} });
+        
+        ajouterBlocAuPlateau(5, new int[][]{ {3,3} });
+        
+        // Bloc Horizontal (2x1)
+        ajouterBlocAuPlateau(6, new int[][]{ {4,3} }); // Au milieu sous le gros bloc
+        
+        // Petits carrés (1x1)
+        ajouterBlocAuPlateau(7, new int[][]{ {4,2} }); 
+        
     }
 
     

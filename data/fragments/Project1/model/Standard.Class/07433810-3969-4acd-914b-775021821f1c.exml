@@ -100,42 +100,18 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="c8d4acbf-31ad-4ba9-9fde-aca2cd35c258"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[Plateau p = new Plateau(10, 10);
+                  <ATT name="Content"><![CDATA[Plateau p = new Plateau(7, 5); 
+
+// Définition de la sortie double en bas
+List<Position> sorties = new ArrayList<>();
+sorties.add(new Position(6, 1));
+sorties.add(new Position(6, 2));
+
+p.creerPlateauDeBase(sorties);
 p.initialiserBlocs();
-Controleur ctrl = new Controleur(p);
-java.util.Scanner reader = new java.util.Scanner(System.in);
 
-while (true) {
-    System.out.println(p.toString());
-    System.out.print("Commande (ex: '0 z' pour monter le bloc 0, 'exit' pour quitter) : ");
-    String input = reader.next();
-
-    if (input.equals("exit")) break;
-
-    try {
-        // 1. On lit le numéro du bloc
-        int numBloc = Integer.parseInt(input);
-        ctrl.selectionParNumero(numBloc);
-        
-        // 2. On lit la direction (z, q, s, d)
-        String dirInput = reader.next();
-        Direction directionChoisie = null;
-        if (dirInput.equals("z")) directionChoisie = Direction.HAUT;
-        else if (dirInput.equals("s")) directionChoisie = Direction.BAS;
-        else if (dirInput.equals("q")) directionChoisie = Direction.GAUCHE;
-        else if (dirInput.equals("d")) directionChoisie = Direction.DROITE;
-        
-        boolean gagne = ctrl.action(directionChoisie);
-        if (gagne) {
-            System.out.println(p.toString());
-            break; // On arrête le jeu
-        }
-        
-    } catch (NumberFormatException e) {
-        System.out.println("Veuillez entrer un numéro de bloc valide.");
-    }
-}
-reader.close();
+Controleur c = new Controleur(p);
+new FenetreJeu(p, c, 7, 5);
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -165,10 +141,55 @@ reader.close();
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="a69d0d1c-d0b8-4a3f-a713-b4548d1262d5"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="FenetreJeu" mc="Standard.Class" uid="69a3e27f-b4a7-4915-8d1b-0fa30a660dd4"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Tag">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="cd5345be-8ed8-4d7d-818e-6abbc45287b1"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Actual">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TagParameter" uid="4a3e303e-c838-473a-a96b-cb86ec3385d5"/>
+                <ATTRIBUTES>
+                  <ATT name="Value"><![CDATA[java.util.ArrayList]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TagParameter" uid="196a6914-325c-43b7-a56a-24386c4c12fc"/>
+                <ATTRIBUTES>
+                  <ATT name="Value"><![CDATA[java.util.List]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Definition">
+              <FOREIGNID name="JavaImport" mc="Infrastructure.TagType" uid="003800a8-0000-0155-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>
