@@ -2,9 +2,7 @@ package gloo.projet.metier;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
-
 import gloo.projet.controle.Controleur;
 import gloo.projet.ihm.FenetreJeu;
 
@@ -12,7 +10,7 @@ import gloo.projet.ihm.FenetreJeu;
 public class Main {
     @objid ("6c16518e-85c1-4a3a-b8ac-d8ed9e85f7d0")
     public static void main(String[] args) {
-    	Plateau p = new Plateau(7, 5); 
+        Plateau p = new Plateau(7, 5); 
         
         // Définition de la sortie double en bas
         List<Position> sorties = new ArrayList<>();

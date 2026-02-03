@@ -275,6 +275,54 @@ if (p.getLigne() < 0 || p.getLigne() >= nbLignes ||
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="positionsSortie" mc="Standard.Parameter" uid="93008471-6ba5-4c35-9be9-aaea661590eb"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">Inout</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[positionsSortie]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Position" mc="Standard.Class" uid="90b3cad6-5b8c-4db4-a438-59a62e558d72"/>
+                  </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="7e237b3a-6ba4-43ed-a630-b8df163198f8"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="83817404-04d2-4907-a9f8-bcdb9dd8bc72"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[List]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="type" mc="Infrastructure.TagType" uid="00000000-0000-3767-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="fd26a786-1c35-41bb-9f08-eb898c5cd6f8"/>
@@ -282,7 +330,14 @@ if (p.getLigne() < 0 || p.getLigne() >= nbLignes ||
                   <ATT name="Content"><![CDATA[for (int l = 0; l < nbLignes; l++) {
     for (int c = 0; c < nbColonnes; c++) {
         Position p = new Position(l, c);
-        if (l == nbLignes / 2 && c == nbColonnes - 1) {
+        
+        // On vérifie si cette position est dans la liste de la sortie
+        boolean estSortie = false;
+        for(Position ps : positionsSortie) {
+            if(ps.getLigne() == l && ps.getColonne() == c) estSortie = true;
+        }
+
+        if (estSortie) {
             kases.put(p, new Sortie(p, this));
         } 
         else if (l == 0 || l == nbLignes - 1 || c == 0 || c == nbColonnes - 1) {
@@ -584,14 +639,25 @@ this.blocs.put(numero, nouveauBloc);
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="cd28bb1a-fbb6-4bae-899e-9e7de5a0f05d"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// Bloc 0 (le rouge) en vertical
-ajouterBlocAuPlateau(0, new int[][]{ {1,2}, {1,3} });
+                  <ATT name="Content"><![CDATA[this.viderPlateau();
 
-// Bloc 1 (un petit carré)
-ajouterBlocAuPlateau(1, new int[][]{ {3,1} });
+// Bloc 0 (Le gros bloc Jaune/Rouge - 2x2)
+ajouterBlocAuPlateau(0, new int[][]{ {1,1}, {1,2},});
 
-// Bloc 2 (un bloc horizontal)
-ajouterBlocAuPlateau(2, new int[][]{ {2,4}, {1,4} });
+// Blocs Verticaux (1x2)
+ajouterBlocAuPlateau(1, new int[][]{ {1,3} }); // Haut droite
+ajouterBlocAuPlateau(2, new int[][]{ {2,1} }); // Bas gauche
+ajouterBlocAuPlateau(3, new int[][]{ {2,2} }); // Bas droite
+
+ajouterBlocAuPlateau(4, new int[][]{ {3,1}, {4,1} });
+
+ajouterBlocAuPlateau(5, new int[][]{ {3,3} });
+
+// Bloc Horizontal (2x1)
+ajouterBlocAuPlateau(6, new int[][]{ {4,3} }); // Au milieu sous le gros bloc
+
+// Petits carrés (1x1)
+ajouterBlocAuPlateau(7, new int[][]{ {4,2} });
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -675,7 +741,7 @@ ajouterBlocAuPlateau(2, new int[][]{ {2,4}, {1,4} });
                   <ATT name="Content"><![CDATA[this.nbLignes = lignes;
 this.nbColonnes = colonnes;
 // On peut même appeler la création ici pour gagner du temps
-this.creerPlateauDeBase();
+//        this.creerPlateauDeBase();
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -859,6 +925,47 @@ for (BlocElementaire be : b0.getElements()) {
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
+        <OBJECT>
+          <ID name="viderPlateau" mc="Standard.Operation" uid="87ae5f48-6f00-4d5e-953d-c52c209213ba"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[viderPlateau]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="efec4e18-762b-4afb-aa01-548210dcd8ad"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[this.blocs.clear(); 
+
+for (int l = 0; l < nbLignes; l++) {
+    for (int c = 0; c < nbColonnes; c++) {
+        AbstractCase ac = this.getCase(new Position(l, c));
+        if (ac != null) {
+            ac.setOccupant(null); // On déconnecte l'ancien bloc de la case
+        }
+    }
+}
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
       </COMP>
       <COMP relation="OwnedAttribute">
         <OBJECT>
@@ -885,7 +992,7 @@ for (BlocElementaire be : b0.getElements()) {
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a6258ed3-f805-4906-9820-4272caf1e0ad"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="9a855873-417b-44f7-bd16-4503b071c1f0"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -923,7 +1030,7 @@ for (BlocElementaire be : b0.getElements()) {
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="8f972f89-82c3-4f00-a358-c879c77911e7"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="71e6d875-df26-47f3-8038-4ab1ae4204fd"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1007,7 +1114,7 @@ for (BlocElementaire be : b0.getElements()) {
                       </DEPENDENCIES>
                     </OBJECT>
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="64ec0317-b2ab-452c-98b5-fb65c302a3c4"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="dbf6c737-a0a3-4741-9560-c8de748e42e1"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -1075,7 +1182,7 @@ for (BlocElementaire be : b0.getElements()) {
                   </COMP>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="b0823650-9469-45bc-bfc3-5e70156a04a1"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="c6fae717-75ef-4c96-8e95-2011f0718e6b"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -1158,6 +1265,14 @@ for (BlocElementaire be : b0.getElements()) {
               </OBJECT>
               <OBJECT>
                 <ID name="" mc="Infrastructure.TagParameter" uid="7a795f97-7aeb-41d9-b51c-ab2c7e3642bc"/>
+                <ATTRIBUTES>
+                  <ATT name="Value"><![CDATA[java.util.List]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TagParameter" uid="21c9c7bc-7320-4ea8-9ba4-0d2a17baca97"/>
                 <ATTRIBUTES>
                   <ATT name="Value"><![CDATA[java.util.Map]]></ATT>
                   <ATT name="status">1970354901745664</ATT>

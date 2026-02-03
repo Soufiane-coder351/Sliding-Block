@@ -67,8 +67,9 @@ public class Bloc {
         }
     }
 
-	public List<BlocElementaire> getElements() {
-		return elements;
-	}
+    @objid ("ceb7a4a1-61f1-4674-9595-b831457056b9")
+    public List<BlocElementaire> getElements() {
+        return elements;
+    }
 
 }

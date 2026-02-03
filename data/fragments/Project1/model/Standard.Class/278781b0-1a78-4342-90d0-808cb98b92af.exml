@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Main" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="MainTextuel" version="4">
   <OBJECT>
-    <ID name="Main" mc="Standard.Class" uid="07433810-3969-4acd-914b-775021821f1c"/>
+    <ID name="MainTextuel" mc="Standard.Class" uid="278781b0-1a78-4342-90d0-808cb98b92af"/>
     <PID name="metier" mc="Standard.Package" uid="597117ea-67a3-4254-b417-62eb14c994f7"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
@@ -11,13 +11,13 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[Main]]></ATT>
+      <ATT name="Name"><![CDATA[MainTextuel]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="main" mc="Standard.Operation" uid="6c16518e-85c1-4a3a-b8ac-d8ed9e85f7d0"/>
+          <ID name="main" mc="Standard.Operation" uid="d74824f9-6276-48ba-af49-88530376261e"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -31,7 +31,7 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="args" mc="Standard.Parameter" uid="ce3ca69d-c628-4a9e-83de-b8e3378dc2b4"/>
+                <ID name="args" mc="Standard.Parameter" uid="59a55a98-f27d-499b-a707-e8382baf6d8e"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
@@ -49,7 +49,7 @@
                 <DEPENDENCIES>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="77c2f853-e3c7-4580-a8a6-098cfc9878af"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="fe5b5eea-6f2d-42e5-8a7a-d911cc8e1932"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -57,7 +57,7 @@
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="deea4d1d-6a36-4cbb-b8b6-b0ec8f02fc85"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="a5225648-26ce-4396-a283-78d421c16a3a"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA[Array]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -71,7 +71,7 @@
                       </DEPENDENCIES>
                     </OBJECT>
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="b6b3b5ae-f472-413e-a2f7-7a7e8cb45e2c"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="b9061e76-24b0-4d1f-8efe-0f169760b303"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -79,7 +79,7 @@
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="a2db3d21-05cb-461a-a8a8-366e0d80a1f4"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="a88a6167-d626-48ef-95fd-a9d408446f37"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA[String]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -98,11 +98,10 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="c8d4acbf-31ad-4ba9-9fde-aca2cd35c258"/>
+                <ID name="" mc="Infrastructure.Note" uid="6413eb4d-e8e7-4b55-87e5-115cf844e7aa"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[Plateau p = new Plateau(7, 5); 
-
-// Définition de la sortie double en bas
+                  <ATT name="Content"><![CDATA[// 1. Initialisation identique au Main graphique
+Plateau p = new Plateau(7, 5); 
 List<Position> sorties = new ArrayList<>();
 sorties.add(new Position(6, 1));
 sorties.add(new Position(6, 2));
@@ -111,7 +110,54 @@ p.creerPlateauDeBase(sorties);
 p.initialiserBlocs();
 
 Controleur c = new Controleur(p);
-new FenetreJeu(p, c, 7, 5);
+Scanner scanner = new Scanner(System.in);
+boolean gagne = false;
+
+System.out.println("=== BIENVENUE DANS LE SLIDING BLOCK PUZZLE (MODE TEXTE) ===");
+
+// 2. Boucle de jeu textuelle
+while (!gagne) {
+    System.out.println(p.toString()); // Affiche la grille actuelle
+    System.out.println("Commandes : <num_bloc> <z|q|s|d> (ex: '0 s' pour descendre le bloc 0)");
+    System.out.print("> ");
+
+    try {
+        String input = scanner.nextLine();
+        if (input.equalsIgnoreCase("exit")) break;
+
+        String[] parts = input.split(" ");
+        if (parts.length != 2) {
+            System.out.println("Format invalide. Utilisez : <num> <dir>");
+            continue;
+        }
+
+        // Sélection du bloc
+        int numBloc = Integer.parseInt(parts[0]);
+        c.selectionParNumero(numBloc);
+
+        // Traduction de la direction
+        Direction dir = null;
+        switch (parts[1].toLowerCase()) {
+            case "z": dir = Direction.HAUT; break;
+            case "s": dir = Direction.BAS; break;
+            case "q": dir = Direction.GAUCHE; break;
+            case "d": dir = Direction.DROITE; break;
+            default: System.out.println("Direction inconnue."); continue;
+        }
+
+        // Exécution de l'action via le contrôleur
+        gagne = c.action(dir);
+
+    } catch (Exception e) {
+        System.out.println("Erreur de saisie : " + e.getMessage());
+    }
+}
+
+if (gagne) {
+    System.out.println(p.toString());
+    System.out.println("Victoire confirmée en mode textuel !");
+}
+scanner.close();
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -129,7 +175,7 @@ new FenetreJeu(p, c, 7, 5);
       </COMP>
       <COMP relation="OwnedImport">
         <OBJECT>
-          <ID name="" mc="Standard.ElementImport" uid="887a079a-4bd4-46ee-afb7-12c2353b3245"/>
+          <ID name="" mc="Standard.ElementImport" uid="54f45b7a-281e-46ee-baf5-c5e6a22a9e3e"/>
           <ATTRIBUTES>
             <ATT name="Visibility">Private</ATT>
             <ATT name="Name"></ATT>
@@ -141,26 +187,13 @@ new FenetreJeu(p, c, 7, 5);
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
-        <OBJECT>
-          <ID name="" mc="Standard.ElementImport" uid="a69d0d1c-d0b8-4a3f-a713-b4548d1262d5"/>
-          <ATTRIBUTES>
-            <ATT name="Visibility">Private</ATT>
-            <ATT name="Name"></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="ImportedElement">
-              <ID name="FenetreJeu" mc="Standard.Class" uid="69a3e27f-b4a7-4915-8d1b-0fa30a660dd4"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
       <COMP relation="Tag">
         <OBJECT>
-          <ID name="" mc="Infrastructure.TaggedValue" uid="cd5345be-8ed8-4d7d-818e-6abbc45287b1"/>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="9f54b93b-7ec2-4210-966a-d48ec9f76095"/>
           <ATTRIBUTES>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
@@ -168,7 +201,7 @@ new FenetreJeu(p, c, 7, 5);
           <DEPENDENCIES>
             <COMP relation="Actual">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="4a3e303e-c838-473a-a96b-cb86ec3385d5"/>
+                <ID name="" mc="Infrastructure.TagParameter" uid="ffe7f575-d36b-4de1-a641-9dcf35c2af67"/>
                 <ATTRIBUTES>
                   <ATT name="Value"><![CDATA[java.util.ArrayList]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -176,9 +209,17 @@ new FenetreJeu(p, c, 7, 5);
                 <DEPENDENCIES></DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="196a6914-325c-43b7-a56a-24386c4c12fc"/>
+                <ID name="" mc="Infrastructure.TagParameter" uid="03446fcb-6e9f-43ce-a82e-474211931745"/>
                 <ATTRIBUTES>
                   <ATT name="Value"><![CDATA[java.util.List]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TagParameter" uid="d525b96d-2ff7-4d99-9613-65d2a97e0862"/>
+                <ATTRIBUTES>
+                  <ATT name="Value"><![CDATA[java.util.Scanner]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES></DEPENDENCIES>

@@ -500,7 +500,7 @@ if (this.blocSelectionne != null) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="0bee6e95-0dba-4c99-ab65-a1fffefedd6c"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="d28f1117-b6dc-4c00-af2e-bf954ef97af6"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -575,7 +575,7 @@ if (this.blocSelectionne != null) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="7769138c-ab02-4ac6-8b98-0ebb2b55d452"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="cf1d5e2f-f5ae-4d21-a140-c6656181ab05"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

@@ -492,7 +492,7 @@ for (BlocElementaire be : this.elements) {
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="3b70461d-b228-4f57-a39c-2d31585d16cc"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="06b3ae8a-70cb-428e-80c5-b5a5c79c76d2"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

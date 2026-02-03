@@ -514,7 +514,7 @@ this.plateau = plat;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="3c92114c-e169-43f1-8308-e630adfe4002"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8ee03929-2e76-465d-aec7-b7744f373ac6"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -613,7 +613,7 @@ this.plateau = plat;
                         </LINK>
                         <COMP relation="Tag">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TaggedValue" uid="fae19f4f-ed4a-4f77-9271-f78409c591b6"/>
+                            <ID name="" mc="Infrastructure.TaggedValue" uid="d1ed0c8b-a0cc-4dbf-997d-56ec01970854"/>
                             <ATTRIBUTES>
                               <ATT name="Name"></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -689,7 +689,7 @@ this.plateau = plat;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="9d8309dd-cb86-4f87-ad46-ef645d72f150"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="736e1cfb-a009-418a-9486-c215eb5507d2"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -764,7 +764,7 @@ this.plateau = plat;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="d0090ea7-0b93-4c84-b15b-bb4f02954c66"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e80af801-5fbc-433e-88b4-087c8938d80c"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

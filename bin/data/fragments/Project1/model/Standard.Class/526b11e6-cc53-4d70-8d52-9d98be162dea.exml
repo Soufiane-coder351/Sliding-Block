@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="CaseGraphique" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="GrilleGraphique" version="4">
   <OBJECT>
-    <ID name="CaseGraphique" mc="Standard.Class" uid="b5f2b763-6f3e-4cc6-b009-724a2f538b1f"/>
+    <ID name="GrilleGraphique" mc="Standard.Class" uid="526b11e6-cc53-4d70-8d52-9d98be162dea"/>
     <PID name="ihm" mc="Standard.Package" uid="a8aec8bb-aec6-4e98-b8f3-08ce69f1dae3"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
@@ -11,13 +11,13 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[CaseGraphique]]></ATT>
+      <ATT name="Name"><![CDATA[GrilleGraphique]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="OwnedOperation">
         <OBJECT>
-          <ID name="CaseGraphique" mc="Standard.Operation" uid="6b706080-b501-4443-a022-a869f836b3eb"/>
+          <ID name="GrilleGraphique" mc="Standard.Operation" uid="8d06af49-7269-4e47-a910-cee9d11659c7"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -25,35 +25,13 @@
             <ATT name="Visibility">Public</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[CaseGraphique]]></ATT>
+            <ATT name="Name"><![CDATA[GrilleGraphique]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="c" mc="Standard.Parameter" uid="abc4b98b-2820-405f-b9d8-cc525bc3e8c5"/>
-                <ATTRIBUTES>
-                  <ATT name="ParameterPassing">Inout</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-                  <ATT name="TypeConstraint"></ATT>
-                  <ATT name="DefaultValue"></ATT>
-                  <ATT name="IsOrdered">false</ATT>
-                  <ATT name="IsUnique">false</ATT>
-                  <ATT name="IsException">false</ATT>
-                  <ATT name="IsStream">false</ATT>
-                  <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"><![CDATA[c]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Type">
-                    <ID name="AbstractCase" mc="Standard.Class" uid="6b6319d2-0218-4f53-9a47-2a4dc10c6ede"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="p" mc="Standard.Parameter" uid="b029c7a4-7e15-462f-8ce9-17c0fd45a1de"/>
+                <ID name="p" mc="Standard.Parameter" uid="38281954-ca81-4886-b72f-82f07fe6ee39"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -74,49 +52,8 @@
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
-            </COMP>
-            <LINK relation="Extension">
-              <FOREIGNID name="create" mc="Infrastructure.Stereotype" uid="00700680-0000-0204-0000-000000000000"/>
-            </LINK>
-            <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="7ffdb68b-3564-4d7b-a146-55d3c1d574a2"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[this.plateau = p;
-this.position = c.getVoisine(null); // Astuce pour récupérer sa position
-this.setFocusable(false); // Évite que le bouton ne capture les touches du clavier
-this.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
-mettreAJour(c, null);
-]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
-          <ID name="mettreAJour" mc="Standard.Operation" uid="cf16afa4-2577-49ca-9f25-83bccc7575e2"/>
-          <ATTRIBUTES>
-            <ATT name="Concurrency">false</ATT>
-            <ATT name="Final">false</ATT>
-            <ATT name="Passing">MethodOut</ATT>
-            <ATT name="Visibility">Public</ATT>
-            <ATT name="IsClass">false</ATT>
-            <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[mettreAJour]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <COMP relation="IO">
-              <OBJECT>
-                <ID name="c" mc="Standard.Parameter" uid="2ef233d9-f8cf-43f5-b37a-a42ada0375c2"/>
+                <ID name="ctrl" mc="Standard.Parameter" uid="4e88165f-d8b9-4751-9fe8-f25170af551f"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -128,120 +65,17 @@ mettreAJour(c, null);
                   <ATT name="IsException">false</ATT>
                   <ATT name="IsStream">false</ATT>
                   <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"><![CDATA[c]]></ATT>
+                  <ATT name="Name"><![CDATA[ctrl]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <LINK relation="Type">
-                    <ID name="AbstractCase" mc="Standard.Class" uid="6b6319d2-0218-4f53-9a47-2a4dc10c6ede"/>
+                    <ID name="Controleur" mc="Standard.Class" uid="0a996fee-6cc9-4413-bb96-791e393dec2a"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="blocSelectionne" mc="Standard.Parameter" uid="7857c214-03e0-4fc2-b6b2-4105152c7e4e"/>
-                <ATTRIBUTES>
-                  <ATT name="ParameterPassing">Inout</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-                  <ATT name="TypeConstraint"></ATT>
-                  <ATT name="DefaultValue"></ATT>
-                  <ATT name="IsOrdered">false</ATT>
-                  <ATT name="IsUnique">false</ATT>
-                  <ATT name="IsException">false</ATT>
-                  <ATT name="IsStream">false</ATT>
-                  <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"><![CDATA[blocSelectionne]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Type">
-                    <ID name="Bloc" mc="Standard.Class" uid="e2ce5985-4692-40bb-a9b7-4574aa16f784"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-            <COMP relation="Descriptor">
-              <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="ce9cb80b-00c6-40c7-8e3a-6fbccb8e8cd5"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[this.setText(""); 
-Bloc blocActuel = c.getBloc();
-Position pos = c.getVoisine(null);
-int lig = pos.getLigne();
-int col = pos.getColonne();
-
-// 1. Couleurs de base
-if (c instanceof Mur) {
-    this.setBackground(Color.BLACK);
-    this.setBorder(null);
-    return; 
-} else if (c instanceof Sortie) {
-    this.setBackground(new Color(46, 139, 87));
-    this.setText("S");
-    this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
-} else {
-    this.setBackground(Color.DARK_GRAY);
-    this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
-}
-
-// 2. Rendu des Blocs
-if (blocActuel != null) {
-    this.setBackground(blocActuel.getNumero() == 0 ? Color.RED : new Color(0, 51, 204));
-
-    // Calcul des épaisseurs pour l'espace noir (fusion des cases du même bloc)
-    int t = estMemeBloc(lig - 1, col, blocActuel) ? 0 : 3;
-    int b = estMemeBloc(lig + 1, col, blocActuel) ? 0 : 3;
-    int l = estMemeBloc(lig, col - 1, blocActuel) ? 0 : 3;
-    int r = estMemeBloc(lig, col + 1, blocActuel) ? 0 : 3;
-
-    Border bordureNoire = BorderFactory.createMatteBorder(t, l, b, r, Color.BLACK);
-
-    // Gestion du marqueur de sélection externe uniquement
-    if (blocActuel == blocSelectionne) {
-        // On n'affiche le liseré jaune que s'il n'y a pas de voisin du même bloc dans cette direction
-        int st = t > 0 ? 2 : 0;
-        int sb = b > 0 ? 2 : 0;
-        int sl = l > 0 ? 2 : 0;
-        int sr = r > 0 ? 2 : 0;
-
-        Border bordureJaune = BorderFactory.createMatteBorder(st, sl, sb, sr, Color.YELLOW);
-        
-        // On combine : le vide noir à l'extérieur, le liseré jaune à l'intérieur
-        this.setBorder(BorderFactory.createCompoundBorder(bordureNoire, bordureJaune));
-    } else {
-        this.setBorder(bordureNoire);
-    }
-}
-]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
-          <ID name="estMemeBloc" mc="Standard.Operation" uid="c354dca3-d14f-4db0-9081-a05ba3d5f5da"/>
-          <ATTRIBUTES>
-            <ATT name="Concurrency">false</ATT>
-            <ATT name="Final">false</ATT>
-            <ATT name="Passing">MethodOut</ATT>
-            <ATT name="Visibility">Private</ATT>
-            <ATT name="IsClass">false</ATT>
-            <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[estMemeBloc]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <COMP relation="IO">
-              <OBJECT>
-                <ID name="lig" mc="Standard.Parameter" uid="af0faaf5-3b3d-4688-9791-260a9da370ef"/>
+                <ID name="lig" mc="Standard.Parameter" uid="a9bc2e85-5533-4366-aa2d-38ad8386e05b"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -263,7 +97,7 @@ if (blocActuel != null) {
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="col" mc="Standard.Parameter" uid="3cd3c461-5b32-4121-9e42-40915de5be4e"/>
+                <ID name="col" mc="Standard.Parameter" uid="94490df6-adaf-44af-9368-526366525292"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">Inout</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -284,76 +118,70 @@ if (blocActuel != null) {
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
-              <OBJECT>
-                <ID name="blocRef" mc="Standard.Parameter" uid="8dac9d8d-ef0d-4ab4-86c5-2e304d9f3a05"/>
-                <ATTRIBUTES>
-                  <ATT name="ParameterPassing">Inout</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-                  <ATT name="TypeConstraint"></ATT>
-                  <ATT name="DefaultValue"></ATT>
-                  <ATT name="IsOrdered">false</ATT>
-                  <ATT name="IsUnique">false</ATT>
-                  <ATT name="IsException">false</ATT>
-                  <ATT name="IsStream">false</ATT>
-                  <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"><![CDATA[blocRef]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Type">
-                    <ID name="Bloc" mc="Standard.Class" uid="e2ce5985-4692-40bb-a9b7-4574aa16f784"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
             </COMP>
-            <COMP relation="Return">
-              <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="e51b4735-8e1d-4f10-82aa-9da690703731"/>
-                <ATTRIBUTES>
-                  <ATT name="ParameterPassing">In</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-                  <ATT name="TypeConstraint"></ATT>
-                  <ATT name="DefaultValue"></ATT>
-                  <ATT name="IsOrdered">false</ATT>
-                  <ATT name="IsUnique">false</ATT>
-                  <ATT name="IsException">false</ATT>
-                  <ATT name="IsStream">false</ATT>
-                  <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Type">
-                    <FOREIGNID name="boolean" mc="Standard.DataType" uid="00000004-0000-0005-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="create" mc="Infrastructure.Stereotype" uid="00700680-0000-0204-0000-000000000000"/>
+            </LINK>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="8b7e932b-a07f-4bfc-bea3-95df54374d52"/>
+                <ID name="" mc="Infrastructure.Note" uid="8d7e441e-2d6f-4d54-8d2b-ad07bd44a2ee"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// Méthode utilitaire pour vérifier si une case voisine appartient au même bloc]]></ATT>
+                  <ATT name="Content"><![CDATA[this.plateau = p;
+this.controleur = ctrl;
+this.setLayout(new GridLayout(lig, col));
+this.cases = new CaseGraphique[lig][col];
+
+for (int l = 0; l < lig; l++) {
+    for (int c = 0; c < col; c++) {
+        AbstractCase ac = p.getCase(new Position(l, c));
+        cases[l][c] = new CaseGraphique(ac, plateau);
+        
+        // On ajoute un listener pour la sélection au clic
+        final int fl = l; final int fc = c;
+        cases[l][c].addActionListener(e -> {
+            this.controleur.selection(fl, fc);
+            this.rafraichir();
+        });
+
+        this.add(cases[l][c]);
+    }
+}
+]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <LINK relation="Model">
-                    <FOREIGNID name="JavaComment" mc="Infrastructure.NoteType" uid="69ab88b5-741c-11e1-89e3-002564c97630"/>
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="rafraichir" mc="Standard.Operation" uid="2b208165-cb9b-49bb-acf1-f4412d935ee4"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[rafraichir]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="443cce1c-1c21-4d8b-baab-9745f27b8c41"/>
+                <ID name="" mc="Infrastructure.Note" uid="aec97528-0902-40b4-8a83-15bd80a67321"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[try {
-    AbstractCase voisine = plateau.getCase(new Position(lig, col));
-    return voisine != null && voisine.getBloc() == blocRef;
-} catch (Exception e) {
-    return false;
+                  <ATT name="Content"><![CDATA[Bloc selectionne = controleur.getBlocSelectionne();
+for (int l = 0; l < cases.length; l++) {
+    for (int c = 0; c < cases[0].length; c++) {
+        cases[l][c].mettreAJour(plateau.getCase(new Position(l, c)), selectionne);
+    }
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -372,7 +200,7 @@ if (blocActuel != null) {
       </COMP>
       <COMP relation="OwnedEnd">
         <OBJECT>
-          <ID name="position" mc="Standard.AssociationEnd" uid="106bc7fb-8d74-47f2-8dde-6c6fa0835876"/>
+          <ID name="cases" mc="Standard.AssociationEnd" uid="aa70631b-e35d-4a14-a131-b38f4c8388e4"/>
           <ATTRIBUTES>
             <ATT name="Aggregation">KindIsAssociation</ATT>
             <ATT name="IsChangeable">true</ATT>
@@ -381,20 +209,20 @@ if (blocActuel != null) {
             <ATT name="IsOrdered">false</ATT>
             <ATT name="IsUnique">false</ATT>
             <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
-            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
             <ATT name="Visibility">Private</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[position]]></ATT>
+            <ATT name="Name"><![CDATA[cases]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
             <LINK relation="Target">
-              <ID name="Position" mc="Standard.Class" uid="90b3cad6-5b8c-4db4-a438-59a62e558d72"/>
+              <ID name="CaseGraphique" mc="Standard.Class" uid="b5f2b763-6f3e-4cc6-b009-724a2f538b1f"/>
             </LINK>
             <COMP relation="Opposite">
               <OBJECT>
-                <ID name="" mc="Standard.AssociationEnd" uid="974d175f-687d-4b40-9c1c-938fddb5efad"/>
+                <ID name="" mc="Standard.AssociationEnd" uid="4c49f97e-d15e-4b2f-84b3-c2d3705996e4"/>
                 <ATTRIBUTES>
                   <ATT name="Aggregation">KindIsAssociation</ATT>
                   <ATT name="IsChangeable">true</ATT>
@@ -412,11 +240,11 @@ if (blocActuel != null) {
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <COMP relation="Opposite">
-                    <COMPID name="position" mc="Standard.AssociationEnd" uid="106bc7fb-8d74-47f2-8dde-6c6fa0835876"/>
+                    <COMPID name="cases" mc="Standard.AssociationEnd" uid="aa70631b-e35d-4a14-a131-b38f4c8388e4"/>
                   </COMP>
                   <COMP relation="Association">
                     <OBJECT>
-                      <ID name="" mc="Standard.Association" uid="4b408b0a-ab1a-4cf3-8367-a16caa6eecdf"/>
+                      <ID name="" mc="Standard.Association" uid="9a01a1d1-bb43-4fe9-9263-1ca4919282ca"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -428,11 +256,55 @@ if (blocActuel != null) {
               </OBJECT>
             </COMP>
             <COMP relation="Association">
-              <COMPID name="" mc="Standard.Association" uid="4b408b0a-ab1a-4cf3-8367-a16caa6eecdf"/>
+              <COMPID name="" mc="Standard.Association" uid="9a01a1d1-bb43-4fe9-9263-1ca4919282ca"/>
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="e2648867-12b0-4a7f-b955-3978e8fd79e4"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="a984abdb-6e45-4cd1-bc31-9caeed85e441"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TagParameter" uid="b7e04aee-2692-4f6c-83e9-83703df4c52d"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[Array]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="type" mc="Infrastructure.TagType" uid="00000000-0000-3766-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="ace1f368-7f9d-4f5b-8349-bc22ce44926f"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TagParameter" uid="4401e458-db60-4625-8630-49b88bdf33cc"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[2]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaArrayDimension" mc="Infrastructure.TagType" uid="eb8c1900-000f-68b5-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="c9e50aeb-791e-45a8-9eb5-56ee6575e07d"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -447,7 +319,7 @@ if (blocActuel != null) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="plateau" mc="Standard.AssociationEnd" uid="49d69a4c-4a6b-4c59-b607-66bef2d31c8f"/>
+          <ID name="plateau" mc="Standard.AssociationEnd" uid="f8fc4cd8-9eb1-4da9-b146-533daedb4b75"/>
           <ATTRIBUTES>
             <ATT name="Aggregation">KindIsAssociation</ATT>
             <ATT name="IsChangeable">true</ATT>
@@ -469,7 +341,7 @@ if (blocActuel != null) {
             </LINK>
             <COMP relation="Opposite">
               <OBJECT>
-                <ID name="" mc="Standard.AssociationEnd" uid="234369f7-d4d3-4671-9a57-fe2b459a36a4"/>
+                <ID name="" mc="Standard.AssociationEnd" uid="bc8395ce-b93f-4429-8be6-9c74d4b45ac3"/>
                 <ATTRIBUTES>
                   <ATT name="Aggregation">KindIsAssociation</ATT>
                   <ATT name="IsChangeable">true</ATT>
@@ -487,11 +359,11 @@ if (blocActuel != null) {
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <COMP relation="Opposite">
-                    <COMPID name="plateau" mc="Standard.AssociationEnd" uid="49d69a4c-4a6b-4c59-b607-66bef2d31c8f"/>
+                    <COMPID name="plateau" mc="Standard.AssociationEnd" uid="f8fc4cd8-9eb1-4da9-b146-533daedb4b75"/>
                   </COMP>
                   <COMP relation="Association">
                     <OBJECT>
-                      <ID name="" mc="Standard.Association" uid="e3b8125f-f958-4e5a-a10e-e07a0b2eb2fb"/>
+                      <ID name="" mc="Standard.Association" uid="c7c91e42-a795-4233-802d-970b1429e6c4"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -503,11 +375,86 @@ if (blocActuel != null) {
               </OBJECT>
             </COMP>
             <COMP relation="Association">
-              <COMPID name="" mc="Standard.Association" uid="e3b8125f-f958-4e5a-a10e-e07a0b2eb2fb"/>
+              <COMPID name="" mc="Standard.Association" uid="c7c91e42-a795-4233-802d-970b1429e6c4"/>
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="822d8e5a-00c3-4c65-aa8e-ae7056ad775f"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="fd8cbd7a-b189-4380-8e8b-02092ae28f2a"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="controleur" mc="Standard.AssociationEnd" uid="4c1beb21-2d68-46b2-a17c-aaad0ad8e446"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[controleur]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Controleur" mc="Standard.Class" uid="0a996fee-6cc9-4413-bb96-791e393dec2a"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="" mc="Standard.AssociationEnd" uid="52c6cc98-925f-4181-ba24-7f94fd74496f"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">AccesNone</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Opposite">
+                    <COMPID name="controleur" mc="Standard.AssociationEnd" uid="4c1beb21-2d68-46b2-a17c-aaad0ad8e446"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="fccf8aaa-ec40-451b-831e-924f66c82a50"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="fccf8aaa-ec40-451b-831e-924f66c82a50"/>
+            </COMP>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="1a624184-7242-475b-a76b-06a41c1555bd"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -524,7 +471,7 @@ if (blocActuel != null) {
       </COMP>
       <COMP relation="OwnedPackageImport">
         <OBJECT>
-          <ID name="" mc="Standard.PackageImport" uid="40024269-4719-4ead-8844-9f254171d7b1"/>
+          <ID name="" mc="Standard.PackageImport" uid="89a4e45d-88b5-480d-b526-93d2ed2ef09d"/>
           <ATTRIBUTES>
             <ATT name="Visibility">Private</ATT>
             <ATT name="Name"></ATT>
@@ -542,7 +489,7 @@ if (blocActuel != null) {
       </LINK>
       <COMP relation="Tag">
         <OBJECT>
-          <ID name="" mc="Infrastructure.TaggedValue" uid="c60d9f2f-be7a-4bce-a8c9-83ebf47961e8"/>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="2dba8e34-9185-46c6-978b-8888d9461d45"/>
           <ATTRIBUTES>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
@@ -550,9 +497,9 @@ if (blocActuel != null) {
           <DEPENDENCIES>
             <COMP relation="Actual">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="9054bb26-9fe6-49c2-8da1-7db004909c72"/>
+                <ID name="" mc="Infrastructure.TagParameter" uid="048250a3-8b39-4a4b-a491-c97df9860e6c"/>
                 <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[JButton]]></ATT>
+                  <ATT name="Value"><![CDATA[JPanel]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES></DEPENDENCIES>
@@ -564,7 +511,7 @@ if (blocActuel != null) {
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.TaggedValue" uid="db200610-e6f8-4260-b2ea-02ca69f165da"/>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="05cb85f3-55e7-42cf-865b-54f491930a88"/>
           <ATTRIBUTES>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
@@ -572,15 +519,7 @@ if (blocActuel != null) {
           <DEPENDENCIES>
             <COMP relation="Actual">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="e738ab57-a477-4c5e-9427-69489c495a50"/>
-                <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[java.awt.*]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="fac984db-06e5-4ea6-b452-d1319eb654bf"/>
+                <ID name="" mc="Infrastructure.TagParameter" uid="9f9f6a4c-9af6-4219-9883-4c04123624a7"/>
                 <ATTRIBUTES>
                   <ATT name="Value"><![CDATA[javax.swing.*]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -588,9 +527,9 @@ if (blocActuel != null) {
                 <DEPENDENCIES></DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TagParameter" uid="b362dd23-3beb-48ab-bc06-ca59e5f9db0b"/>
+                <ID name="" mc="Infrastructure.TagParameter" uid="2e84b3c5-c3c7-47bf-aa13-c32467c14a06"/>
                 <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[javax.swing.border.Border]]></ATT>
+                  <ATT name="Value"><![CDATA[java.awt.*]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES></DEPENDENCIES>

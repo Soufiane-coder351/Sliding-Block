@@ -6,7 +6,6 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 public class Case extends AbstractCase {
 //    @objid ("011bd9fb-a198-43a6-897c-72bfcc22748d")
 //    private BlocElementaire occupant; // a verifier si correcte
-
     @objid ("4e7f46fb-82f9-441c-8e56-48381607266c")
     public Case(Position pos, Plateau plateau) {
         super(pos, plateau);

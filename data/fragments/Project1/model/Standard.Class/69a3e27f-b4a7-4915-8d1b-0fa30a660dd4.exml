@@ -231,7 +231,7 @@ this.setVisible(true);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="bba2cc33-75a2-470b-868d-ea19512ccafb"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="7395c4f7-9aeb-44b1-b268-fd867030dca8"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -306,7 +306,7 @@ this.setVisible(true);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="3ac66f82-571a-4df4-adc0-e7a59a7c9f1c"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="f89f8440-3940-4ef3-a44f-9513e00dc6b4"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -386,7 +386,7 @@ this.setVisible(true);
               <OBJECT>
                 <ID name="" mc="Infrastructure.TagParameter" uid="0ab41875-8f0b-4ee9-8d6c-a76e401abf0a"/>
                 <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[javax.swing.*]]></ATT>
+                  <ATT name="Value"><![CDATA[java.awt.event.*]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES></DEPENDENCIES>
@@ -394,7 +394,7 @@ this.setVisible(true);
               <OBJECT>
                 <ID name="" mc="Infrastructure.TagParameter" uid="66ecb8c4-a243-4a72-b8c0-0589c67bef90"/>
                 <ATTRIBUTES>
-                  <ATT name="Value"><![CDATA[java.awt.event.*]]></ATT>
+                  <ATT name="Value"><![CDATA[javax.swing.*]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES></DEPENDENCIES>

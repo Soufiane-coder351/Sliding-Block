@@ -1,7 +1,6 @@
 package gloo.projet.controle;
 
 import javax.swing.JOptionPane;
-
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import gloo.projet.metier.Bloc;
 import gloo.projet.metier.Direction;
@@ -15,25 +14,6 @@ public class Controleur {
     @objid ("788af38b-9f17-40ca-a802-94bbc6b014c7")
     private Plateau plateau;
 
-    public Controleur(Plateau plateau) {
-        this.plateau = plateau;
-    }
-    
-    public Bloc getBlocSelectionne() {
-        return this.blocSelectionne;
-    }
-    
-    public void selection(final int ligne, final int colonne) {
-        // On demande au plateau le bloc présent à ces coordonnées
-        this.blocSelectionne = this.plateau.getBloc(ligne, colonne);
-        
-        if (this.blocSelectionne != null) {
-            System.out.println("Bloc " + blocSelectionne.getNumero() + " sélectionné via IHM !");
-        } else {
-            System.out.println("Case vide ou mur sélectionné.");
-        }
-    }
-    
     @objid ("f204014b-9182-42ca-866f-357136e4753e")
     public void selectionParNumero(final int numero) {
         this.blocSelectionne = this.plateau.getBlocParNumero(numero);
@@ -45,18 +25,18 @@ public class Controleur {
 
     @objid ("cebb37d8-b25b-44e2-a044-ba278e3882d3")
     public boolean action(final Direction direction) {
-    	if(direction == null) {
-    		System.out.println("Veuillez sélectionner une direction correcte.");
-    		return false;
-    	}
+        if(direction == null) {
+            System.out.println("Veuillez sélectionner une direction correcte.");
+            return false;
+        }
         if (this.blocSelectionne != null) {
             this.blocSelectionne.deplacer(direction);
-
+        
             if (this.plateau.verifierVictoire()) {
                 System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 System.out.println("!!! BRAVO ! VOUS AVEZ GAGNÉ !!!");
                 System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
+        
                 String[] options = {"Recommencer", "Quitter"};
                 int choix = JOptionPane.showOptionDialog(
                         null, 
@@ -83,6 +63,28 @@ public class Controleur {
             return false;
         }
         return false;
+    }
+
+    @objid ("eec97c6e-429c-4877-a788-342caf4c382e")
+    public Controleur(Plateau plateau) {
+        this.plateau = plateau;
+    }
+
+    @objid ("f8f6c104-ba6d-46fc-a536-f74a6484ce72")
+    public Bloc getBlocSelectionne() {
+        return this.blocSelectionne;
+    }
+
+    @objid ("a8cafecf-0406-414e-8789-bc7b02c257a8")
+    public void selection(final int ligne, final int colonne) {
+        // On demande au plateau le bloc présent à ces coordonnées
+        this.blocSelectionne = this.plateau.getBloc(ligne, colonne);
+        
+        if (this.blocSelectionne != null) {
+            System.out.println("Bloc " + blocSelectionne.getNumero() + " sélectionné via IHM !");
+        } else {
+            System.out.println("Case vide ou mur sélectionné.");
+        }
     }
 
 }

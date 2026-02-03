@@ -10,19 +10,18 @@ public class BlocElementaire {
     @objid ("484a2dd9-34fa-4d39-8b67-ced8cd3da83a")
     private AbstractCase laCase;
 
-    @objid ("f9bd9f8d-d282-40cf-91ab-ef9c2da3bea6")
-    public BlocElementaire(Bloc bloc, Case laCase) {
-    	this.bloc = bloc;
-    	this.laCase = laCase;
-    	this.bloc.ajouterElement(this);
-    	this.laCase.setOccupant(this);
-    }
-
     @objid ("6e1a18aa-57a9-45f8-8e0c-d64e2f3d19a1")
     public Bloc getBloc() {
         return this.bloc;
     }
 
+    @objid ("f9bd9f8d-d282-40cf-91ab-ef9c2da3bea6")
+    public BlocElementaire(Bloc bloc, Case laCase) {
+        this.bloc = bloc;
+        this.laCase = laCase;
+        this.bloc.ajouterElement(this);
+        this.laCase.setOccupant(this);
+    }
 
     @objid ("7ffe15e4-eb82-4fdf-a10c-e1da8b8904b6")
     public String getSymbole() {

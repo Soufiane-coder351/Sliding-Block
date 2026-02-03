@@ -19,14 +19,6 @@ public class Plateau {
     @objid ("471ec8f4-ea1f-41e3-a19c-c9c4056a7690")
     private Map<Integer, Bloc> blocs = new HashMap<Integer, Bloc>();
 
-    @objid ("d0c11cb6-1017-4b31-8371-da9bbfd5013d")
-    public Plateau(int lignes, int colonnes) {
-        this.nbLignes = lignes;
-        this.nbColonnes = colonnes;
-        // On peut même appeler la création ici pour gagner du temps
-//        this.creerPlateauDeBase();
-    }
-    
     @objid ("ab90ffef-dc88-4d0b-9251-a84aedc63d50")
     public Bloc getBloc(final int ligne, final int colonne) {
         Position p = new Position(ligne, colonne);
@@ -35,11 +27,6 @@ public class Plateau {
             return c.getBloc();
         }
         return null;
-    }
-    
-    public Bloc getBlocParNumero(int numero) {
-        // Retourne le bloc correspondant à la clé 'numero' dans ta HashMap
-        return this.blocs.get(numero);
     }
 
     @objid ("adfd552a-d5b1-41a9-8ebb-c395d9bb46e4")
@@ -51,20 +38,8 @@ public class Plateau {
         }
         return kases.get(p);
     }
-    
-    public boolean verifierVictoire() {
-        // On cherche si un élément du bloc 0 est sur une case de type Sortie
-        Bloc b0 = blocs.get(0);
-        for (BlocElementaire be : b0.getElements()) {
-            if (be.getCase() instanceof Sortie) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     @objid ("e3020a7f-30cc-4f60-96d5-337ad6c14101")
- // Dans Plateau.java
     public void creerPlateauDeBase(List<Position> positionsSortie) {
         for (int l = 0; l < nbLignes; l++) {
             for (int c = 0; c < nbColonnes; c++) {
@@ -75,7 +50,7 @@ public class Plateau {
                 for(Position ps : positionsSortie) {
                     if(ps.getLigne() == l && ps.getColonne() == c) estSortie = true;
                 }
-
+        
                 if (estSortie) {
                     kases.put(p, new Sortie(p, this));
                 } 
@@ -132,19 +107,6 @@ public class Plateau {
         this.blocs.put(numero, nouveauBloc);
     }
 
-    public void viderPlateau() {
-        this.blocs.clear(); 
-
-        for (int l = 0; l < nbLignes; l++) {
-            for (int c = 0; c < nbColonnes; c++) {
-                AbstractCase ac = this.getCase(new Position(l, c));
-                if (ac != null) {
-                    ac.setOccupant(null); // On déconnecte l'ancien bloc de la case
-                }
-            }
-        }
-    }
-    
     @objid ("73a6cc5c-2b67-43cb-b3f9-065aa783bd6b")
     public void initialiserBlocs() {
         this.viderPlateau();
@@ -165,10 +127,47 @@ public class Plateau {
         ajouterBlocAuPlateau(6, new int[][]{ {4,3} }); // Au milieu sous le gros bloc
         
         // Petits carrés (1x1)
-        ajouterBlocAuPlateau(7, new int[][]{ {4,2} }); 
-        
+        ajouterBlocAuPlateau(7, new int[][]{ {4,2} });
     }
 
-    
+    @objid ("d0c11cb6-1017-4b31-8371-da9bbfd5013d")
+    public Plateau(int lignes, int colonnes) {
+        this.nbLignes = lignes;
+        this.nbColonnes = colonnes;
+        // On peut même appeler la création ici pour gagner du temps
+        //        this.creerPlateauDeBase();
+    }
+
+    @objid ("2cc0f612-4788-4fbc-8123-e78dab9e183b")
+    public Bloc getBlocParNumero(int numero) {
+        // Retourne le bloc correspondant à la clé 'numero' dans ta HashMap
+        return this.blocs.get(numero);
+    }
+
+    @objid ("ad7b4b29-be05-42a8-8afd-0687897d9566")
+    public boolean verifierVictoire() {
+        // On cherche si un élément du bloc 0 est sur une case de type Sortie
+        Bloc b0 = blocs.get(0);
+        for (BlocElementaire be : b0.getElements()) {
+            if (be.getCase() instanceof Sortie) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @objid ("87ae5f48-6f00-4d5e-953d-c52c209213ba")
+    public void viderPlateau() {
+        this.blocs.clear(); 
+        
+        for (int l = 0; l < nbLignes; l++) {
+            for (int c = 0; c < nbColonnes; c++) {
+                AbstractCase ac = this.getCase(new Position(l, c));
+                if (ac != null) {
+                    ac.setOccupant(null); // On déconnecte l'ancien bloc de la case
+                }
+            }
+        }
+    }
 
 }
