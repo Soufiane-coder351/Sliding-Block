@@ -1,5 +1,6 @@
 package gloo.projet.ihm;
 
+import java.awt.BorderLayout;
 import java.awt.event.*;
 import javax.swing.*;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
@@ -22,8 +23,26 @@ public class FenetreJeu extends JFrame {
         this.setTitle("Sliding Block Puzzle");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
+             // 1. Utiliser un BorderLayout pour organiser les composants
+        this.setLayout(new BorderLayout());
+        
+        // 2. Créer le panneau du haut avec le bouton Recommencer
+        JPanel barreOutils = new JPanel();
+        JButton boutonReset = new JButton("Recommencer");
+        boutonReset.setFocusable(false); // Important pour ne pas voler le focus du clavier
+        
+        boutonReset.addActionListener(e -> {
+            p.initialiserBlocs(); // Appelle ta méthode qui fait viderPlateau + ajout blocs
+            c.selection(-1, -1);  // Désélectionne tout (en passant des coordonnées hors plateau)
+            grille.rafraichir();
+        });
+        
+        barreOutils.add(boutonReset);
+        this.add(barreOutils, BorderLayout.NORTH); // Place la barre en haut
+        
+        // 3. Ajouter la grille au centre
         this.grille = new GrilleGraphique(p, c, lig, col);
-        this.add(grille);
+        this.add(grille, BorderLayout.CENTER);
         
         // Écouteur de touches pour le mouvement
         this.addKeyListener(new KeyAdapter() {

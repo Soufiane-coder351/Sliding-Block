@@ -432,7 +432,7 @@ if (blocActuel != null) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="2bf33651-f9e3-4870-b5f3-82f16361072a"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e944137c-1767-4e99-a443-0381990febb1"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -507,7 +507,7 @@ if (blocActuel != null) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="819c7ecf-81d0-4cfc-a0df-3586d1eb176a"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="064a2f75-5f50-4bc3-a9b4-ac70961ea782"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

@@ -78,12 +78,14 @@ public class Controleur {
     @objid ("a8cafecf-0406-414e-8789-bc7b02c257a8")
     public void selection(final int ligne, final int colonne) {
         // On demande au plateau le bloc présent à ces coordonnées
-        this.blocSelectionne = this.plateau.getBloc(ligne, colonne);
+        try {
+            this.blocSelectionne = this.plateau.getBloc(ligne, colonne);
+        } catch (Exception e) {
+            this.blocSelectionne = null; // Si clic hors limites ou reset, on vide la sélection
+        }
         
         if (this.blocSelectionne != null) {
             System.out.println("Bloc " + blocSelectionne.getNumero() + " sélectionné via IHM !");
-        } else {
-            System.out.println("Case vide ou mur sélectionné.");
         }
     }
 

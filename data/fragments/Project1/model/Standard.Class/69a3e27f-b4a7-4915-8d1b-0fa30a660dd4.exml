@@ -130,8 +130,26 @@
 this.setTitle("Sliding Block Puzzle");
 this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+     // 1. Utiliser un BorderLayout pour organiser les composants
+this.setLayout(new BorderLayout());
+
+// 2. Créer le panneau du haut avec le bouton Recommencer
+JPanel barreOutils = new JPanel();
+JButton boutonReset = new JButton("Recommencer");
+boutonReset.setFocusable(false); // Important pour ne pas voler le focus du clavier
+
+boutonReset.addActionListener(e -> {
+    p.initialiserBlocs(); // Appelle ta méthode qui fait viderPlateau + ajout blocs
+    c.selection(-1, -1);  // Désélectionne tout (en passant des coordonnées hors plateau)
+    grille.rafraichir();
+});
+
+barreOutils.add(boutonReset);
+this.add(barreOutils, BorderLayout.NORTH); // Place la barre en haut
+
+// 3. Ajouter la grille au centre
 this.grille = new GrilleGraphique(p, c, lig, col);
-this.add(grille);
+this.add(grille, BorderLayout.CENTER);
 
 // Écouteur de touches pour le mouvement
 this.addKeyListener(new KeyAdapter() {
@@ -231,7 +249,7 @@ this.setVisible(true);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="373b9696-f752-4f7e-924f-577f41afead0"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="ec9fc0a5-0108-4de7-92aa-642efc934725"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -306,7 +324,7 @@ this.setVisible(true);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a12b3116-a1ee-4745-bb4e-e9b74d32e4be"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="14950e24-c601-4ede-9d9b-e0b839b525c4"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -395,6 +413,14 @@ this.setVisible(true);
                 <ID name="" mc="Infrastructure.TagParameter" uid="66ecb8c4-a243-4a72-b8c0-0589c67bef90"/>
                 <ATTRIBUTES>
                   <ATT name="Value"><![CDATA[javax.swing.*]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TagParameter" uid="6d389472-7b9b-4a17-a997-46f2bd2c4ce2"/>
+                <ATTRIBUTES>
+                  <ATT name="Value"><![CDATA[java.awt.BorderLayout]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES></DEPENDENCIES>

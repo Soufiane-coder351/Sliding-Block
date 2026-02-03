@@ -568,7 +568,7 @@ else if (dir == Direction.DROITE) nc++;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="2742c543-ff88-445b-89bf-4754a7f8382b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="15e0e424-b324-4ec4-8f0b-c809c7956d09"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -606,7 +606,7 @@ else if (dir == Direction.DROITE) nc++;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="6c686359-2b92-4928-9e1c-4c32a6d61395"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="dc8013b4-c172-4ade-b128-31cea4cb75d2"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

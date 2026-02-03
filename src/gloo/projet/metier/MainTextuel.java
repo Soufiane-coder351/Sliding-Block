@@ -57,10 +57,7 @@ public class MainTextuel {
                 if (mouvementReussi) {
                     // 2. On vérifie la victoire via le plateau après un mouvement réussi
                     gagne = p.verifierVictoire(); 
-                    if (!gagne) System.out.println("Mouvement effectué !");
-                } else {
-                    System.out.println("Mouvement impossible !");
-                }
+                } 
         
             } catch (Exception e) {
                 System.out.println("Erreur : " + e.getMessage());
