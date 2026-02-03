@@ -528,7 +528,7 @@ this.laCase.setOccupant(this);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="faf48863-86ea-4fab-95d0-4cfc6bde0a4b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8a6550de-5f90-47f1-917b-ba7f6f99e48d"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -603,7 +603,7 @@ this.laCase.setOccupant(this);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="3ab6046f-0a16-4c06-985e-7de0ad712ad6"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="fe98e2f2-df0e-40c7-a6cd-0532a679e2f0"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

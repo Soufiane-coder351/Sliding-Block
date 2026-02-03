@@ -10,7 +10,6 @@ import gloo.projet.controle.Controleur;
 public class MainTextuel {
     @objid ("d74824f9-6276-48ba-af49-88530376261e")
     public static void main(String[] args) {
-        // 1. Initialisation identique au Main graphique
         Plateau p = new Plateau(7, 5); 
         List<Position> sorties = new ArrayList<>();
         sorties.add(new Position(6, 1));
@@ -25,10 +24,9 @@ public class MainTextuel {
         
         System.out.println("=== BIENVENUE DANS LE SLIDING BLOCK PUZZLE (MODE TEXTE) ===");
         
-        // 2. Boucle de jeu textuelle
         while (!gagne) {
-            System.out.println(p.toString()); // Affiche la grille actuelle
-            System.out.println("Commandes : <num_bloc> <z|q|s|d> (ex: '0 s' pour descendre le bloc 0)");
+            System.out.println(p.toString());
+            System.out.println("Commandes : <num_bloc> <z|q|s|d> (ex: '0 s' pour descendre)");
             System.out.print("> ");
         
             try {
@@ -37,15 +35,13 @@ public class MainTextuel {
         
                 String[] parts = input.split(" ");
                 if (parts.length != 2) {
-                    System.out.println("Format invalide. Utilisez : <num> <dir>");
+                    System.out.println("Format invalide.");
                     continue;
                 }
         
-                // Sélection du bloc
                 int numBloc = Integer.parseInt(parts[0]);
                 c.selectionParNumero(numBloc);
         
-                // Traduction de la direction
                 Direction dir = null;
                 switch (parts[1].toLowerCase()) {
                     case "z": dir = Direction.HAUT; break;
@@ -55,17 +51,25 @@ public class MainTextuel {
                     default: System.out.println("Direction inconnue."); continue;
                 }
         
-                // Exécution de l'action via le contrôleur
-                gagne = c.action(dir);
+                // 1. On exécute l'action (bouge le bloc)
+                boolean mouvementReussi = c.action(dir);
+                
+                if (mouvementReussi) {
+                    // 2. On vérifie la victoire via le plateau après un mouvement réussi
+                    gagne = p.verifierVictoire(); 
+                    if (!gagne) System.out.println("Mouvement effectué !");
+                } else {
+                    System.out.println("Mouvement impossible !");
+                }
         
             } catch (Exception e) {
-                System.out.println("Erreur de saisie : " + e.getMessage());
+                System.out.println("Erreur : " + e.getMessage());
             }
         }
         
         if (gagne) {
             System.out.println(p.toString());
-            System.out.println("Victoire confirmée en mode textuel !");
+            System.out.println("!!! FÉLICITATIONS : VICTOIRE EN MODE TEXTUEL !!!");
         }
         scanner.close();
     }

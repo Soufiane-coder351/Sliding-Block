@@ -231,7 +231,7 @@ this.setVisible(true);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="7395c4f7-9aeb-44b1-b268-fd867030dca8"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="373b9696-f752-4f7e-924f-577f41afead0"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -306,7 +306,7 @@ this.setVisible(true);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="f89f8440-3940-4ef3-a44f-9513e00dc6b4"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="a12b3116-a1ee-4745-bb4e-e9b74d32e4be"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

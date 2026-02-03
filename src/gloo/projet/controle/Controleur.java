@@ -30,7 +30,7 @@ public class Controleur {
             return false;
         }
         if (this.blocSelectionne != null) {
-            this.blocSelectionne.deplacer(direction);
+            if(!this.blocSelectionne.deplacer(direction)) return false;
         
             if (this.plateau.verifierVictoire()) {
                 System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
@@ -58,11 +58,11 @@ public class Controleur {
                 
                 return true; // On signale la victoire
             }
+            return true;
         } else {
             System.out.println("Veuillez sélectionner un bloc avant d'agir.");
             return false;
         }
-        return false;
     }
 
     @objid ("eec97c6e-429c-4877-a788-342caf4c382e")

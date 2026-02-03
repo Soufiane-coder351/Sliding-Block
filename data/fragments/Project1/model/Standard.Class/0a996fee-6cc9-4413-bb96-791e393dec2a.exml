@@ -176,7 +176,7 @@ if (this.blocSelectionne == null) {
     return false;
 }
 if (this.blocSelectionne != null) {
-    this.blocSelectionne.deplacer(direction);
+    if(!this.blocSelectionne.deplacer(direction)) return false;
 
     if (this.plateau.verifierVictoire()) {
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
@@ -204,6 +204,7 @@ if (this.blocSelectionne != null) {
         
         return true; // On signale la victoire
     }
+    return true;
 } else {
     System.out.println("Veuillez sélectionner un bloc avant d'agir.");
     return false;
@@ -216,20 +217,6 @@ if (this.blocSelectionne != null) {
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="ad9041e5-2eae-40f4-a505-17f7345d3923"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return false;]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -500,7 +487,7 @@ if (this.blocSelectionne != null) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="d28f1117-b6dc-4c00-af2e-bf954ef97af6"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="f037d111-e2d6-4bcd-9c77-9728ca30a9c1"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -575,7 +562,7 @@ if (this.blocSelectionne != null) {
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="cf1d5e2f-f5ae-4d21-a140-c6656181ab05"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="ecaa44f6-4c61-457a-ab13-cb963947d78a"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

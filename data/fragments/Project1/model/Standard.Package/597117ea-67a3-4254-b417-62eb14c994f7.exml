@@ -76,6 +76,7 @@
         <COMPID name="Plateau" mc="Standard.Class" uid="f18c9e36-a759-4b55-ae2e-9cf5bfc42646"/>
         <COMPID name="Main" mc="Standard.Class" uid="07433810-3969-4acd-914b-775021821f1c"/>
         <COMPID name="MainTextuel" mc="Standard.Class" uid="278781b0-1a78-4342-90d0-808cb98b92af"/>
+        <COMPID name="LanceurTests" mc="Standard.Class" uid="8087d9cb-3cd1-40f3-bda7-453d15b9a83a"/>
       </COMP>
       <LINK relation="Extension">
         <ID name="JavaPackage" mc="Infrastructure.Stereotype" uid="74392891-bd80-443b-b6a5-dc7820033241"/>

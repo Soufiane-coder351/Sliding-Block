@@ -354,24 +354,52 @@ this.plateau = plateau;
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Standard.Parameter" uid="5e8fd33e-a1ad-4c1b-b529-abac1788b311"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="boolean" mc="Standard.DataType" uid="00000004-0000-0005-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="44332b01-382a-43f1-8bea-343ef52225fe"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[if (!this.peutSeDeplacer(dir)) {
+                  <ATT name="Content"><![CDATA[// 1. On vérifie si le mouvement est possible
+if (!this.peutSeDeplacer(dir)) {
     System.out.println("Ne peux pas se deplacer");
-    return; // bloque
+    return false; // Mouvement refusé
 }
 
+// 2. On libère les cases actuelles (Délégation à BlocElementaire)
 for (BlocElementaire be : this.elements) {
     be.getCase().setOccupant(null);
 }
 
+// 3. On occupe les nouvelles cases
 for (BlocElementaire be : this.elements) {
     Position voisine = be.getPositionVoisine(dir);
     AbstractCase nouvelleCase = this.plateau.getCase(voisine);
-    be.setCase(nouvelleCase);
-    nouvelleCase.setOccupant(be);
+    
+    be.setCase(nouvelleCase); // Mise à jour de la référence dans l'élément
+    nouvelleCase.setOccupant(be); // Mise à jour de la référence dans la case
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -381,6 +409,20 @@ for (BlocElementaire be : this.elements) {
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="5299231a-f739-4c49-94e4-aa53b1f1d830"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return true; // Mouvement réussi]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -492,7 +534,7 @@ for (BlocElementaire be : this.elements) {
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="06b3ae8a-70cb-428e-80c5-b5a5c79c76d2"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="dab05881-5635-4bfb-a486-f5beb19a2823"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

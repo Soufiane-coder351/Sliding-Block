@@ -49,22 +49,27 @@ public class Bloc {
     }
 
     @objid ("efda5765-921a-4283-9ba2-4cb8b3bea4e5")
-    public void deplacer(Direction dir) {
+    public boolean deplacer(Direction dir) {
+        // 1. On vérifie si le mouvement est possible
         if (!this.peutSeDeplacer(dir)) {
             System.out.println("Ne peux pas se deplacer");
-            return; // bloque
+            return false; // Mouvement refusé
         }
         
+        // 2. On libère les cases actuelles (Délégation à BlocElementaire)
         for (BlocElementaire be : this.elements) {
             be.getCase().setOccupant(null);
         }
         
+        // 3. On occupe les nouvelles cases
         for (BlocElementaire be : this.elements) {
             Position voisine = be.getPositionVoisine(dir);
             AbstractCase nouvelleCase = this.plateau.getCase(voisine);
-            be.setCase(nouvelleCase);
-            nouvelleCase.setOccupant(be);
+            
+            be.setCase(nouvelleCase); // Mise à jour de la référence dans l'élément
+            nouvelleCase.setOccupant(be); // Mise à jour de la référence dans la case
         }
+        return true; // Mouvement réussi
     }
 
     @objid ("ceb7a4a1-61f1-4674-9595-b831457056b9")
